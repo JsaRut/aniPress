@@ -1,0 +1,11 @@
+/*
+Theme Name: aniPress
+Theme URI: https://pipw.top/get
+Description: 基于qinPress 3.0升级改造的WordPress动漫视频播放主题，并持续维护 GitHub地址:https://github.com/JsaRut/aniPress,
+Version: 1.0
+Author: JsaRut
+*/
+*:not(input){
+	margin: 0;
+	padding: 0;
+}

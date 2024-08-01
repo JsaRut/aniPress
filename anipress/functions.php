@@ -17,13 +17,13 @@ add_action( 'rest_api_init', function() {
 }, 15 );
 
 
-require get_template_directory() . '/qinmei/animate.php';
-require get_template_directory() . '/qinmei/longpost.php';
-require get_template_directory() . '/qinmei/comment.php';
-require get_template_directory() . '/qinmei/user.php';
-require get_template_directory() . '/qinmei/setting.php';
-require get_template_directory() . '/qinmei/others.php';
-require get_template_directory() . '/qinmei/function.php';
+require get_template_directory() . '/anipress/animate.php';
+require get_template_directory() . '/anipress/longpost.php';
+require get_template_directory() . '/anipress/comment.php';
+require get_template_directory() . '/anipress/user.php';
+require get_template_directory() . '/anipress/setting.php';
+require get_template_directory() . '/anipress/others.php';
+require get_template_directory() . '/anipress/function.php';
 require get_template_directory() . '/util/index.php';
 add_theme_support( 'post-thumbnails' );
 
@@ -527,7 +527,7 @@ function convert_animatekind_id_to_taxonomy_term_in_query($query) {
 add_filter('upload_mimes','custom_upload_mimes');
 function custom_upload_mimes ( $existing_mimes=array() ) {
 unset ($existing_mimes);//禁止上传任何文件
-$existing_mimes['jpg|jpeg|gif|png']='image/image';//允许用户上传jpg，gif，png文件
+$existing_mimes['jpg|jpeg|gif|png|webp']='image/image';//允许用户上传jpg，gif，png，Webp文件
 return $existing_mimes;
 }
 
@@ -543,5 +543,12 @@ function salong_disable_wp_tailoring( $sizes ){
 }
 add_filter( 'intermediate_image_sizes_advanced', 'salong_disable_wp_tailoring' );
 
-
-
+//使用MD5值代替媒体库文件名
+function custom_upload_filter( $file ){
+  $info = pathinfo($file['name']);
+  $ext = '.' . $info['extension'];
+  $md5 = md5($file['name']);
+  $file['name'] = $md5.$ext;
+  return $file;
+}
+add_filter('wp_handle_upload_prefilter', 'custom_upload_filter' );

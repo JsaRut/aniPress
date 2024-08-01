@@ -2,6 +2,8 @@
 
 此套主题主要是将 WordPress 改造成纯 api 的站点，以便实现前后端分离的技术栈，唯一的问题就是需要安装 JWT token 插件
 
+由于文档站尚未编写，安装/使用与上游保持一致
+
 ### 功能介绍
 
 1. 支持豆瓣以及 bangumi 的一键获取动漫信息, 豆瓣 API 目前使用的是第三方代理 可能有失效的风险.
@@ -27,9 +29,9 @@
 
 ```js
 主题结构示例
-|----api.qinmei.video    //wp 主站点，提供 api 后台管理等等
-|----www.qinmei.video    //PC 主站点，电脑访问自动跳转
-|----m.qinmei.video      //移动端主题站点，自动跳转
+|----api.example.com    //wp 主站点，提供 api 后台管理等等
+|----www.example.com    //PC 主站点，电脑访问自动跳转
+|----m.example.com      //移动端主题站点，自动跳转
 ```
 ### To Do
 The Movie DB API 获取动漫信息

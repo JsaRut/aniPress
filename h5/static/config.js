@@ -1,5 +1,5 @@
 window.config = {
-  baseurl: "https://qinmei.org",
-  basename: "Qinmei",
-  mindex: "https://img.qinmei.org/img/vue/mindex.jpg"
+  baseurl: "WordPress站点地址",
+  basename: "站点名称",
+  mindex: "https://img-api.pipw.top/?phone=true"
 };

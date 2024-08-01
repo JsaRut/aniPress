@@ -1,4 +1,4 @@
 window.config = {
-    baseurl:'https://qinmei.org',
-    basename:'Qinmei',
+    baseurl:'WordPress站点地址',
+    basename:'站点名称',
 }

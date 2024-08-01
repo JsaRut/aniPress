@@ -39,10 +39,10 @@ if (!$user_ID) { //判断用户是否登录
   
 	?>   
 	<!DOCTYPE html>
-	<html lang="en">
+	<html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<title>Qinmei</title>
+		<title>AinPress - 登录</title>
       	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="//at.alicdn.com/t/font_726734_euokevd6tze.css">
 		<style>
@@ -125,7 +125,7 @@ if (!$user_ID) { //判断用户是否登录
 	<body>
 		<div id="container">   
 			<div id="content">   
-				<h3><i class="iconfont icon-qinmei"></i></h3>   
+				<h3>AinPress</h3>   
 				<div id="result"></div>
 				<form id="wp_login_form" action="" method="post">   
 

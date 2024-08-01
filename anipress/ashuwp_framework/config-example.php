@@ -380,11 +380,10 @@ $meta5_conf = array(
 **/
 /**General options**/
 $page_info = array(
-  'full_name'  => 'QinPress',
+  'full_name'  => 'AniPress',
   'optionname' => 'general',
   'child'      => false,
-  'desc'       => '<a href="https://qinmei.video" class="page-title-action" style="margin-left:15px;">演示站点</a>
-  <a class="page-title-action" style="margin-left:15px;" href="/wp-admin/admin.php?action=qinmei_init">创建页面</a>',
+  'desc'       => '<a class="page-title-action" style="margin-left:15px;" href="/wp-admin/admin.php?action=qinmei_init">创建页面</a>',
   'filename'   => 'generalpage'
 );
 
@@ -401,7 +400,7 @@ $ashu_options[] = array(
   'name' => '网站名',
   'id'   => 'qinmei_name',
   'desc' => '网站名，简短重要，四个字以内',
-  'std'  => 'Qinmei',
+  'std'  => '',
   'type' => 'text'
 );
 
@@ -409,7 +408,7 @@ $ashu_options[] = array(
   'name' => '网站标语',
   'id'   => 'qinmei_slogan',
   'desc' => '简单描述，15字以内最好',
-  'std'  => '十年生死两茫茫，不思量，自难忘',
+  'std'  => '',
   'type' => 'text'
 );
 

@@ -15,7 +15,7 @@
 ### 目录结构
 
 ```js
-|---qinpress   // wordpress主题文件
+|---anipress   // wordpress主题文件
 |---web        // pc 端文件
 |---h5         // 移动端文件
 |---picture    // 图片相关

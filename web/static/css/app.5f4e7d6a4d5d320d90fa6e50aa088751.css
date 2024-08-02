@@ -69,7 +69,7 @@ main {
 	height: 2.2rem;
 	border: none;
 	padding: 0 10px;
-	color: #0084ff;
+	color: #ffc0cb;
 	background: rgba(0, 132, 255, .1);
 	border-color: transparent;
 	border-radius: 3px;
@@ -79,7 +79,7 @@ main {
 }
 
 .zhihuBtn.active {
-	background: #0084ff;
+	background: #ffc0cb;
 	color: #fff
 }
 
@@ -19574,7 +19574,7 @@ footer {
 
 .form-footer-register {
 	cursor: pointer;
-	color: #0084ff
+	color: #ffc0cb
 }
 
 main[data-v-49835d90] {

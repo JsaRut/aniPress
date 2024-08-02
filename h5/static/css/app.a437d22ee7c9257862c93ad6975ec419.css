@@ -258,7 +258,7 @@ input:focus {
 
 .form-footer-register {
     cursor: pointer;
-    color: #0084ff
+    color: #ffc0cb
 }
 
 .index-scroll {
@@ -1199,7 +1199,7 @@ input:focus {
     height: 1.8rem;
     border: none;
     padding: 1px 12px 0;
-    color: #0084ff;
+    color: #ffc0cb;
     background: rgba(0, 132, 255, .1);
     border-color: transparent;
     border-radius: 3px;
@@ -2617,7 +2617,7 @@ input.weui-btn_plain-primary {
     height: 1.8rem;
     border: none;
     padding: 1px 12px 0;
-    color: #0084ff;
+    color: #ffc0cb;
     background: rgba(0, 132, 255, .1);
     border-color: transparent;
     border-radius: 3px;

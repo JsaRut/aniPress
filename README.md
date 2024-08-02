@@ -40,6 +40,10 @@ The Movie DB API 获取动漫信息
 
 编写文档站
 
+会员系统与积分系统的完善
+
+写 APP
+
 ### 主题预览
 
 ![picture](https://raw.githubusercontent.com/Qinmei/qinpress/3.0/picture/18.PNG)

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:compileSdkVersion="28"
+    android:compileSdkVersionCodename="9"
+    package="com.ani.video"
+    platformBuildVersionCode="28"
+    platformBuildVersionName="9">
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <permission
+        android:name="com.ani.video.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.ani.video.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <application
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="com.ani.video.MainApplication"
+        android:allowBackup="false"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+        <activity
+            android:label="@string/app_name"
+            android:name="com.ani.video.MainActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="ani"/>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="a44aa64e9c77a6dcc70c47a8"/>
+        <activity
+            android:theme="@style/MyDialogStyle"
+            android:name="cn.jpush.android.p121ui.PopWinActivity"
+            android:exported="false"/>
+        <activity
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:name="cn.jpush.android.p121ui.PushActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="cn.jpush.android.p121ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.ani.video"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="cn.jpush.android.service.JNotifyActivity"
+            android:exported="false"
+            android:taskAffinity="jpush.custom">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.JNotifyActivity"/>
+                <category android:name="com.ani.video"/>
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="cn.jiguang.plugins.push.receiver.JPushModuleReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE"/>
+                <category android:name="com.ani.video"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="cn.jiguang.plugins.push.receiver.JPushBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <category android:name="com.ani.video"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false"/>
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.ani.video"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <service android:name="cn.jiguang.plugins.service.JCoreModuleService">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action"/>
+            </intent-filter>
+        </service>
+        <provider
+            android:name="com.imagepicker.FileProvider"
+            android:exported="false"
+            android:authorities="com.ani.video.provider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+</manifest>
